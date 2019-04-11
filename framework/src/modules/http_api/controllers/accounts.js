@@ -46,7 +46,7 @@ function accountFormatter(totalSupply, account) {
 		'balance',
 		'u_balance',
 		'secondPublicKey',
-		'asset',
+		'data',
 	]);
 	formattedAccount.unconfirmedBalance = formattedAccount.u_balance;
 	delete formattedAccount.u_balance;

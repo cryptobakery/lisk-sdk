@@ -54,7 +54,7 @@ const sqlFiles = {
  * @property {number} u_multiLifetime
  * @property {string} u_balance
  * @property {number} productivity
- * @property {json} asset
+ * @property {json} data
  */
 
 /**
@@ -257,7 +257,7 @@ class Account extends BaseEntity {
 		this.addField('missedBlocks', 'string', { filter: ft.NUMBER });
 		this.addField('rank', 'string', { filter: ft.NUMBER });
 		this.addField('vote', 'string', { filter: ft.NUMBER });
-		this.addField('asset', 'string');
+		this.addField('data', 'string');
 
 		this.addFilter('votedDelegatesPublicKeys_in', ft.CUSTOM, {
 			condition:
@@ -439,7 +439,7 @@ class Account extends BaseEntity {
 			.then(resp => {
 				const parseResponse = account => {
 					// TODO: Always show or only when parsedOptions.extended=true
-					account.asset = account.asset ? account.asset : {};
+					account.data = account.data ? account.data : {};
 					return account;
 				};
 

@@ -170,8 +170,8 @@ describe('ChainAccount', () => {
 			await AccountEntity.create(account);
 
 			const mergedObject = Object.assign({}, defaultCreateValues, account);
-			mergedObject.asset = mergedObject.asset
-				? JSON.stringify(mergedObject.asset)
+			mergedObject.data = mergedObject.data
+				? JSON.stringify(mergedObject.data)
 				: null;
 
 			expect(AccountEntity.getValuesSet.firstCall.args[0]).to.be.eql([
@@ -282,7 +282,7 @@ describe('ChainAccount', () => {
 				u_votedDelegatesPublicKeys: null,
 				membersPublicKeys: null,
 				u_membersPublicKeys: null,
-				asset: {},
+				data: {},
 			};
 			expect(accountFromDB).to.be.eql(expectedObject);
 		});
