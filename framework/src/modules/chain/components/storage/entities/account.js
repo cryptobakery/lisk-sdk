@@ -138,8 +138,8 @@ class ChainAccount extends AccountEntity {
 
 		accounts = accounts.map(account => {
 			const parsedAccount = _.defaults(account, defaultCreateValues);
-			parsedAccount.asset = parsedAccount.asset
-				? JSON.stringify(parsedAccount.asset)
+			parsedAccount.data = parsedAccount.data
+				? JSON.stringify(parsedAccount.data)
 				: null;
 
 			return parsedAccount;
