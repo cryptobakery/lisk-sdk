@@ -2589,6 +2589,7 @@ definitions:
       - publicKey
       - balance
       - unconfirmedBalance
+      - asset
     properties:
       address:
         type: string
@@ -2614,6 +2615,10 @@ definitions:
         description: |
           The current unconfirmed balance of the account in Beddows.
           Includes unconfirmed transactions.
+      asset:
+        type: object
+        description: |
+          Displays additional account data.
       secondPublicKey:
         type: string
         format: publicKey

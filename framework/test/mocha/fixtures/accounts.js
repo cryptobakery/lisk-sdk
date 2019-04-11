@@ -101,6 +101,7 @@ const Account = stampit({
 		membersPublicKeys: null,
 		u_membersPublicKeys: null,
 		productivity: 0,
+		asset: null,
 	},
 	init({
 		isDelegate,
@@ -112,6 +113,7 @@ const Account = stampit({
 		producedBlocks,
 		missedBlocks,
 		balance,
+		asset,
 	}) {
 		this.isDelegate = isDelegate || this.isDelegate;
 		this.username = username || randomstring.generate(10).toLowerCase();
@@ -131,6 +133,7 @@ const Account = stampit({
 		this.productivity =
 			this.producedBlocks / (this.producedBlocks + this.missedBlocks) || 0;
 		this.balance = balance || '0';
+		this.asset = asset || {};
 	},
 });
 
